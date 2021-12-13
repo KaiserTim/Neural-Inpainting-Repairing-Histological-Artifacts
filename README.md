@@ -1,0 +1,24 @@
+# Neural-Inpainting-Forschungszentrum-Juelich
+
+Code for the Master Thesis: Neural Inpainting: Repairing Artifacts in Histological Brain Sections with 
+Deep Generative Models.
+
+![alt text](https://github.com/KaiserTim/Neural-Inpainting-Repairing-Histological-Artifacts/blob/master/utils/NN_overview.pdf?raw=true)
+
+## File Structure
+The intact dataset and cGlow model saves couldn't be uploaded to GitHub, due to filesize restrictions.
+
+Download here: https://uni-duesseldorf.sciebo.de/s/IClQWe8cI4Jdjys, password: NIdownload
+
+### models
+Contains scripts for running each model, the model classes and model saves. Each script contains class that loads the model when initialized, as well as
+an inference function to run it. 
+
+### data
+Contains both datasets in TIF files. The intact dataset couldn't be uploaded to GitHub, due to filesize restrictions.
+
+### training
+Contains the necessary code to train and evaluate each model, as well as a model save.
+
+### utils
+Contains code for the model evaluations, dataset implementations and utility functions.

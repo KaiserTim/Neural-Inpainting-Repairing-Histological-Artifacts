@@ -27,7 +27,7 @@ class BinaryInpainting:
         # cGlow model 
         SG = CondGlowModel(x_size, y_size, x_hidden_channels, x_hidden_size, y_hidden_channels, K, L, learn_top, y_bins)
         dirname = os.path.dirname(__file__)
-        SG.load_state_dict(torch.load(os.path.join(dirname, "model_saves/ShapeInpainting_o2_ml192_bs64_lr5.0e-03_lrdc_3.pt"), 
+        SG.load_state_dict(torch.load(os.path.join(dirname, "model_saves/ShapeInpainting_o2_ml192_bs64_lr5.0e-03_lrdc.pt"),
                                       map_location=device))
         SG.to(device)
         SG.eval()
