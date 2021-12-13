@@ -11,7 +11,7 @@ The intact dataset and cGlow model saves couldn't be uploaded to GitHub, due to 
 Download here: https://uni-duesseldorf.sciebo.de/s/IClQWe8cI4Jdjys, password: NIdownload
 
 ### Demo
-A notebook and script to test all models by running inference examples. 
+A notebook to test all models by running inference examples. 
 
 ### models
 Contains scripts for running each model, the model classes and model saves. Each script contains class that loads the model when initialized, as well as
