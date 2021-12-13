@@ -33,7 +33,7 @@ class TrainSetIntact(Dataset):
         
         self.imgs = []
         for data_id in data_ids:
-            path = os.path.join(datapath, "example_volume/")+data_id
+            path = os.path.join(datapath, "intact_data/")+data_id
             self.imgs.append(Tensor.from_file(path, delimiter="#"))
             
         self.train_ids = np.arange(len(self.imgs))
@@ -42,11 +42,11 @@ class TrainSetIntact(Dataset):
             self.test_ids = np.append(self.test_ids, self.train_ids[i])
             self.train_ids = np.delete(self.train_ids, i)
         
-        anno_ids = os.listdir(os.path.join(datapath, "new_data"))
+        anno_ids = os.listdir(os.path.join(datapath, "artifact_data"))
         
         self.annos = []
         for i, img_id in enumerate(anno_ids):
-            with h5py.File(os.path.join(datapath, "new_data/")+img_id, 'r') as file:
+            with h5py.File(os.path.join(datapath, "artifact_data/")+img_id, 'r') as file:
                 img = file["inputs"][:]
                 shape = img.shape
                 if shape[0] < crop_dim or shape[1] < crop_dim:
@@ -125,12 +125,12 @@ class TrainSetArtefacts(Dataset):
         self.test = test
         
         datapath = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/")
-        self.data_ids = os.listdir(os.path.join(datapath, "new_data"))
+        self.data_ids = os.listdir(os.path.join(datapath, "artifact_data"))
         
         self.imgs = []
         self.annos = []
         for i, img_id in enumerate(self.data_ids):
-            with h5py.File(os.path.join(datapath, "new_data/")+img_id, 'r') as file:
+            with h5py.File(os.path.join(datapath, "artifact_data/")+img_id, 'r') as file:
                 img = file["inputs"][:]
                 shape = img.shape
                 if shape[0] < crop_dim or shape[1] < crop_dim:
