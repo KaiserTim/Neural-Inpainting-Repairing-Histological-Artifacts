@@ -82,7 +82,7 @@ def train(train_loader, test_loader, epochs, SG,  SG_opt, DI, cpn, order, cuda, 
     return SG_loss_hist       
 
 
-def sample_SI(loader, SG, DI, cpn, order, cuda=False, device=None, plot=True, seed=None):
+def sample_SI(loader, SG, DI, cpn, order, cuda=False, device=None, plot=True, save_as=None, seed=None):
     """Training function for the VAEAC model on Fourier data.
     Arguments:
         loader: PyTorch DataLoader object
@@ -93,6 +93,7 @@ def sample_SI(loader, SG, DI, cpn, order, cuda=False, device=None, plot=True, se
         cuda: Whether to use cuda or not
         device: PyTorch device
         plot: Whether to plot the results, else return the results
+        save_as: Whether to save the plot
         seed: Set a random seed for reproducible results
     """
     start = time.time()
@@ -159,7 +160,6 @@ def sample_SI(loader, SG, DI, cpn, order, cuda=False, device=None, plot=True, se
         mask = mask[0,0].cpu().detach().numpy()
         loc_mask = loc_mask[0,0].cpu().detach().numpy()
         
-        fourier_src = fourier_src.cpu().detach().numpy()
         fourier_tgt = fourier_tgt.cpu().detach().numpy()
         fourier_prd = fourier_prd.squeeze(0).cpu().detach().numpy()
         
@@ -209,6 +209,8 @@ def sample_SI(loader, SG, DI, cpn, order, cuda=False, device=None, plot=True, se
         plt.title("Prediction New Cells")
         plt.imshow(np.any(labels_prd_new > 0, axis=-1), vmin=0, vmax=1, cmap="gray")
         plt.axis("off")
+        if save_as is not None:
+            plt.savefig(save_as, dpi=200, bbox_inches='tight')
         plt.show()
     else:
         return fourier_prd
