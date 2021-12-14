@@ -163,7 +163,7 @@ class CondGlowModel(nn.Module):
         if reverse == False:
             dimensions = y.size(1)*y.size(2)*y.size(3)
             logdet = torch.zeros_like(y[:, 0, 0, 0])
-            logdet += float(-np.log(self.n_bins) * dimensions)  # Don't understand this, need to investigate!
+            logdet += float(-np.log(self.n_bins) * dimensions)
             z, objective = self.flow(x, y, logdet=logdet, reverse=False)
             mean, logs = self.prior()
             objective += modules.GaussianDiag.logp(mean, logs, z)
