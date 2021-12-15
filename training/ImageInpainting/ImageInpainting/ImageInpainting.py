@@ -15,6 +15,11 @@ from models.cpn_custom_forward_2 import CPN
 from training_funcs import train, sample_II
 
 
+# Note on this model: The training results are inconsistent and very sensitive to hyperparameter changes.
+# $\beta_1 \leq 0.8$ in the Adam optimizers seems to very important for training stability in runs longer than 20-30
+# epochs. The results are less sensitive to small changes in width unit or learning rates. It is unclear what causes
+# artifacting to appear in specific examples and how to prevent it.
+
 if __name__ == "__main__":
     np.random.seed(42)
     torch.manual_seed(42);
