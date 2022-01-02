@@ -1,0 +1,16 @@
+numpy
+matplotlib
+torch>=1.9.0
+celldetection
+demics
+numba
+pytiff
+psutil
+scipy
+scikit-image
+opencv-python
+torchvision>=0.10.0
+seaborn
+tqdm
+h5py
+pillow

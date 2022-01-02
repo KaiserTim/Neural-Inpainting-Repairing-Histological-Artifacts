@@ -32,7 +32,7 @@ class CPN():
 def cpn_forward(
         self,
         inputs,
-        targets: Dict[str, Tensor] = None,
+        targets=None,
         nms=True
 ):
     # Presets
