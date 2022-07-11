@@ -1,7 +1,8 @@
 # Neural-Inpainting-Forschungszentrum-Juelich
 
 Code for the Master Thesis: Neural Inpainting: Repairing Artifacts in Histological Brain Sections with 
-Deep Generative Models. Download the thesis here:
+Deep Generative Models. \
+Download the thesis here:
 
 Small version (31MB, without examples in the appendix): https://uni-duesseldorf.sciebo.de/s/B9tD5vpFFek8faZ, password: MTdownload \
 Full version (159MB): https://uni-duesseldorf.sciebo.de/s/uWG01Zh1RM0av0J, password: MTdownload
