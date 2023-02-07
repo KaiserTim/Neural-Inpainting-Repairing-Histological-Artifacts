@@ -12,7 +12,7 @@ Full version (159MB): https://uni-duesseldorf.sciebo.de/s/uWG01Zh1RM0av0J, passw
 ## File Structure
 The intact dataset and cGlow model saves couldn't be uploaded to GitHub, due to filesize restrictions.
 
-Download here: https://uni-duesseldorf.sciebo.de/s/ISTlJJHUCzPstNt, password: NIdownload
+Download here: [https://uni-duesseldorf.sciebo.de/s/ISTlJJHUCzPstNt](https://uni-duesseldorf.sciebo.de/s/1t6jUEmqOJa2xbD), password: NIdownload
 
 ### Demo
 A notebook to test all models by running inference examples. 
